@@ -21,7 +21,7 @@ const mongoose = require('mongoose');
 mongoose.set("strictQuery", false);
 
 const dev_db_url = "mongodb://127.0.0.1:27017/local_library"
-const mongodb = process.env.MONGODN_URL || dev_db_url ||
+const mongodb = process.env.MONGODN_URL || dev_db_url
 
 main().catch((err) => {
   console.log(err);
@@ -53,7 +53,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.user(compression()) // Compress all routes
+app.use(compression()) // Compress all routes
 
 app.use(express.static(path.join(__dirname, 'public')));
 
